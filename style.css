@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffe6f0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* 💌 Tarjeta */
+.container {
+  position: relative;
+  z-index: 2;
+  display: none;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 100, 150, 0.3);
+  padding: 30px 40px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+h1 {
+  font-family: 'Comic Neue', cursive;
+  color: #ff4f81;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff9ac5, 0 0 20px #ff4f81; }
+  to { text-shadow: 0 0 20px #ff9ac5, 0 0 40px #ff4f81; }
+}
+
+.snoopy {
+  width: 230px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+p {
+  font-size: 1.2em;
+  color: #555;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+button {
+  background: linear-gradient(45deg, #ff4f81, #ff7ba2);
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 100, 150, 0.4);
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(255, 100, 150, 0.6);
+}
+
+.mensaje {
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  color: #ff4f81;
+  font-family: 'Comic Neue', cursive;
+  z-index: 1;
+  animation: aparecer 3s ease;
+}
+
+.mensaje h2 {
+  font-size: 1.8em;
+}
+
+@keyframes aparecer {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* 💞 Pantalla del mensaje secreto */
+.mensaje-oculto {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 230, 240, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.mensaje-oculto h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5em;
+  color: #ff007f;
+  text-shadow: 0 0 20px #ff7bb7, 0 0 40px #ff1493;
+  margin-bottom: 30px;
+  animation: brillar 2s infinite alternate;
+}
+
+@keyframes brillar {
+  from { text-shadow: 0 0 20px #ff7bb7, 0 0 40px #ff1493; }
+  to { text-shadow: 0 0 40px #ff007f, 0 0 80px #ff66b2; }
+}
+
+.mensaje-oculto img {
+  width: 350px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 100, 150, 0.5);
+  animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
